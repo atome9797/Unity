@@ -7,6 +7,8 @@ public class helecopter : MonoBehaviour
     public GameObject Pro;
     public GameObject TailPropeller;
     public Rigidbody PlayerRigidbody;
+    public GameObject a1;
+
     public float MaxPropellerSpeed = 10f;
     private PlayerInput _input;
     private bool _isTurnOn = false;
@@ -24,6 +26,7 @@ public class helecopter : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             _isTurnOn = !_isTurnOn;
+            a1.transform.Rotate(30f, 0f, 0f);
         }
 
         if(_isTurnOn)
@@ -47,7 +50,10 @@ public class helecopter : MonoBehaviour
     private float _propellerSpeed = 0f;
     private void onTurnOn()
     {
-        _propellerSpeed = Mathf.Lerp(_propellerSpeed, MaxPropellerSpeed, Time.deltaTime);
+        _propellerSpeed = Mathf.Lerp(_propellerSpeed, MaxPropellerSpeed, Time.deltaTime); 
+                                                                        //유니티 50프레임
+                                                                        // 0.02초
+                                                                        // 점점 범위가 높아지                                                   면서 스피드가 높아                                                              짐
         Pro.transform.Rotate(0f, _propellerSpeed, 0f); //1초에 300도 회전함
         TailPropeller.transform.Rotate(_propellerSpeed, 0f , 0f); //1초에 300도 회전함
 
@@ -77,6 +83,7 @@ public class helecopter : MonoBehaviour
     private void onTurnOff()
     {
         _propellerSpeed = Mathf.Lerp(_propellerSpeed, 0f, Time.deltaTime);
+                                        // 0으로 줄어들게 함
         Pro.transform.Rotate(0f, _propellerSpeed, 0f); //1초에 300도 회전함
         TailPropeller.transform.Rotate(_propellerSpeed, 0f, 0f); //1초에 300도 회전함
 
