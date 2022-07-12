@@ -8,7 +8,7 @@ public class Terret : MonoBehaviour
 
     public Transform Player;
     public GameObject BulletPrefab;
-    public GameObject Terret2;
+    public GameObject TerretInner;
     public float minTime = 0.5f;
     public float maxTime = 3;
 
@@ -19,7 +19,7 @@ public class Terret : MonoBehaviour
     {   
         if(isTurnTerret)
         {
-            Terret2.transform.Rotate(0, 1, 0);
+            TerretInner.transform.Rotate(0, 1, 0);
         }
     }
 
@@ -52,7 +52,7 @@ public class Terret : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            Terret2.transform.LookAt(Player);
+            TerretInner.transform.LookAt(Player);
             isTurnTerret = false;
         }
     }
