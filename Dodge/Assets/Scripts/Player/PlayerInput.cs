@@ -8,12 +8,6 @@ public class PlayerInput : MonoBehaviour
     public float X { get; private set; }
     public float Y { get; private set; }
 
-
-    void Start()
-    {
-        Debug.Log("PlayerInput Start");   
-    }
-
     // Update is called once per frame
     void Update()
     {

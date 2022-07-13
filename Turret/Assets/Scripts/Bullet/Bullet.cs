@@ -15,7 +15,7 @@ public class Bullet : MonoBehaviour
 
     private void Update()
     {
-        transform.LookAt(Player.transform);
+        //transform.LookAt(Player.transform);
         transform.Translate(0f, 0f, Speed);
         //transform.position = new Vector3(0f, 0f, Speed);
     }

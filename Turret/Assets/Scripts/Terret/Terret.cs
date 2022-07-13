@@ -8,22 +8,55 @@ public class Terret : MonoBehaviour
 
     public Transform Player;
     public GameObject BulletPrefab;
-    public GameObject TerretInner;
-    public float minTime = 0.5f;
-    public float maxTime = 3;
 
-    private bool isTurnTerret = true;
+    public float RotationSpeed = 50f;
+    public float AttackCooltime = 0.5f;
+    private AutoTarget _autoTarget;
+
+    private void Awake()
+    {
+        _autoTarget = GetComponentInChildren<AutoTarget>();
+        //AutoTarget 클래스 안의 target이라는 게임 오브젝트를 불러옴 => 플레이어의 위치 정보 있음
+    }
+
+
+    //private bool isTurnTerret = true;
 
     // Update is called once per frame
     void Update()
-    {   
-        if(isTurnTerret)
+    {
+        if (_autoTarget.IsTargetOn) //범위 안에 들어왔을때 실행한다.
         {
-            TerretInner.transform.Rotate(0, 1, 0);
+            //TerretInner.transform.Rotate(0, 1, 0);
+            onTargetOn(); 
+        }
+        else //범위 밖으로 나갔을때 실행한다.
+        {
+            onIdle();
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    void onTargetOn()
+    {
+        //player의 정보를 가져오게 됨
+        transform.LookAt(_autoTarget.Target.transform); 
+        //update에서 실시간으로 플레이어의 위치를 가져옴
+
+        _elapsedTime += Time.deltaTime;
+        if (_elapsedTime >= AttackCooltime)
+        {
+            _elapsedTime = 0f;
+            Instantiate(BulletPrefab, transform.position, transform.rotation);
+        }
+    }
+
+    void onIdle()
+    {
+        _elapsedTime = AttackCooltime;
+        transform.Rotate(0f, RotationSpeed * Time.deltaTime, 0f);
+    }
+
+/*    private void OnTriggerEnter(Collider other)
     {
         PlayerLookAt(other);
         CreateBullet();
@@ -46,9 +79,9 @@ public class Terret : MonoBehaviour
     {
         PlayerLookOutAt(other);
     }
+*/
 
-
-    void PlayerLookAt(Collider other)
+/*    void PlayerLookAt(Collider other)
     {
         if (other.tag == "Player")
         {
@@ -69,5 +102,5 @@ public class Terret : MonoBehaviour
     {
         GameObject bullet = Instantiate(BulletPrefab, transform);
         bullet.transform.LookAt(Player);
-    }
+    }*/
 }
