@@ -13,11 +13,14 @@ public class Terret : MonoBehaviour
     public float RotationSpeed = 50f;
     public float AttackCooltime = 0.5f;
     private AutoTarget _autoTarget;
-    
+
+    public Vector3 forwardTest;
+
 
     private void Awake()
     {
         _autoTarget = GetComponentInChildren<AutoTarget>();
+        forwardTest = _autoTarget.transform.forward;
         //AutoTarget 클래스 안의 target이라는 게임 오브젝트를 불러옴 => 플레이어의 위치 정보 있음
     }
 
@@ -37,13 +40,14 @@ public class Terret : MonoBehaviour
             onIdle();
         }*/
 
-        Debug.DrawRay(transform.position, transform.forward * 5f, Color.blue);
+        Debug.DrawRay(transform.position, forwardTest * 5f, Color.blue);
 
-        Debug.Log("is Visible: " + isTargetInSight(gameObject.transform.position, Player.position, gameObject.transform.forward));
 
         if (_autoTarget.IsTargetOn) //범위 안에 들어왔을때 실행한다.
         {
-            if (isTargetInSight(_autoTarget.transform.position, Player.position, _autoTarget.transform.forward))
+            Debug.Log("is Visible: " + isTargetInSight(gameObject.transform.position, Player.position, forwardTest));
+
+            if (isTargetInSight(_autoTarget.transform.position, Player.position, forwardTest))
             {
                 onTargetOn();
             }
@@ -62,11 +66,13 @@ public class Terret : MonoBehaviour
         Vector3 targetDirection = (target - terret).normalized;
         //터렛의 방향과 거리값을 내적해서 값을 구한다.
         float dotProduct = Vector3.Dot(forward.normalized, targetDirection);
+        Vector3 CrossProduct = Vector3.Cross(forward.normalized, targetDirection);
         // 내적의 값이 > 0 이면 플레이어 앞에있고, < 0이면 뒤에있다.
         Debug.Log("dotProduct: " + dotProduct);
+        float theta = Mathf.Acos(dotProduct) * Mathf.Rad2Deg;
 
         // Target과 Player사이의 각도
-        if(dotProduct > 0) //범위 안에 있고 각도 범위 안에 있을때
+        if(dotProduct > 0 && theta > 30 && CrossProduct.y < 0f) //범위 안에 있고 각도 범위 안에 있을때
         {
             return true;
         }
@@ -78,7 +84,7 @@ public class Terret : MonoBehaviour
     void onTargetOn()
     {
         //player의 정보를 가져오게 됨
-        //transform.LookAt(_autoTarget.Target.transform); 
+        transform.LookAt(_autoTarget.Target.transform); 
         //update에서 실시간으로 플레이어의 위치를 가져옴
 
         _elapsedTime += Time.deltaTime;
@@ -92,7 +98,7 @@ public class Terret : MonoBehaviour
     void onIdle()
     {
         _elapsedTime = AttackCooltime;
-        //transform.Rotate(0f, RotationSpeed * Time.deltaTime, 0f);
+        transform.Rotate(0f, RotationSpeed * Time.deltaTime, 0f);
     }
 
 /*    private void OnTriggerEnter(Collider other)
