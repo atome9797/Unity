@@ -13,9 +13,9 @@ public class PlayerHealth : MonoBehaviour
     {
         Debug.Log("asdasd");
 
-        if (other.tag == "Bullet")
+        /*if (other.tag == "Bullet")
         {
             Die();
-        }
+        }*/
     }
 }

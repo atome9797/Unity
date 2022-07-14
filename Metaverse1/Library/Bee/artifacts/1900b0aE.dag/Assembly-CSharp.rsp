@@ -355,6 +355,7 @@
 "Assets/EulerTest.cs"
 "Assets/log_conponent.cs"
 "Assets/move.cs"
+"Assets/Vector.cs"
 -langversion:9.0
 
 /deterministic

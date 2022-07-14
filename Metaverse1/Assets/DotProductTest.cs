@@ -40,7 +40,7 @@ public class DotProductTest : MonoBehaviour
 
 
         //내적 Dot
-        Debug.Log(Vector3.Dot(transform.forward, distanceVector.normalized)); //단위 벡터
+/*        Debug.Log(Vector3.Dot(transform.forward, distanceVector.normalized)); //단위 벡터
 
         
         Debug.DrawRay(transform.position, transform.forward * 5f, Color.blue);
@@ -49,7 +49,7 @@ public class DotProductTest : MonoBehaviour
         //외적 Cross
         Vector3 normalVector = Vector3.Cross(transform.forward, distanceVector.normalized);
         Debug.DrawRay(transform.position, normalVector * 5f, Color.green);
-
+*/
 
 
     }
