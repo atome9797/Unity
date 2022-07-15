@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,14 +14,15 @@ public class Terret : MonoBehaviour
     public float AttackCooltime = 0.5f;
     private AutoTarget _autoTarget;
 
-    public Vector3 forwardTest;
+    //public Vector3 forwardTest;
+    public GameObject OuterTerret;
 
 
     private void Awake()
     {
         _autoTarget = GetComponentInChildren<AutoTarget>();
-        forwardTest = _autoTarget.transform.forward;
-        //AutoTarget Å¬·¡½º ¾ÈÀÇ targetÀÌ¶ó´Â °ÔÀÓ ¿ÀºêÁ§Æ®¸¦ ºÒ·¯¿È => ÇÃ·¹ÀÌ¾îÀÇ À§Ä¡ Á¤º¸ ÀÖÀ½
+        //forwardTest = _autoTarget.transform.forward;
+        //AutoTarget í´ë˜ìŠ¤ ì•ˆì˜ targetì´ë¼ëŠ” ê²Œì„ ì˜¤ë¸Œì íŠ¸ë¥¼ ë¶ˆëŸ¬ì˜´ => í”Œë ˆì´ì–´ì˜ ìœ„ì¹˜ ì •ë³´ ìˆìŒ
     }
 
 
@@ -30,31 +31,32 @@ public class Terret : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
- /*       if (_autoTarget.IsTargetOn) //¹üÀ§ ¾È¿¡ µé¾î¿ÔÀ»¶§ ½ÇÇàÇÑ´Ù.
+ /*       if (_autoTarget.IsTargetOn) //ë²”ìœ„ ì•ˆì— ë“¤ì–´ì™”ì„ë•Œ ì‹¤í–‰í•œë‹¤.
         {
             //TerretInner.transform.Rotate(0, 1, 0);
             onTargetOn(); 
         }
-        else //¹üÀ§ ¹ÛÀ¸·Î ³ª°¬À»¶§ ½ÇÇàÇÑ´Ù.
+        else //ë²”ìœ„ ë°–ìœ¼ë¡œ ë‚˜ê°”ì„ë•Œ ì‹¤í–‰í•œë‹¤.
         {
             onIdle();
         }*/
 
-        Debug.DrawRay(transform.position, forwardTest * 5f, Color.blue);
+        Debug.DrawRay(transform.position, OuterTerret.transform.forward * 5f, Color.blue);
 
 
-        if (_autoTarget.IsTargetOn) //¹üÀ§ ¾È¿¡ µé¾î¿ÔÀ»¶§ ½ÇÇàÇÑ´Ù.
+
+        if (_autoTarget.IsTargetOn) //ë²”ìœ„ ì•ˆì— ë“¤ì–´ì™”ì„ë•Œ ì‹¤í–‰í•œë‹¤.
         {
-            Debug.Log("is Visible: " + isTargetInSight(gameObject.transform.position, Player.position, forwardTest));
+            Debug.Log("is Visible: " + isTargetInSight(transform.position, Player.position, OuterTerret.transform.forward));
 
-            if (isTargetInSight(_autoTarget.transform.position, Player.position, forwardTest))
+            if (isTargetInSight(transform.position, Player.position, OuterTerret.transform.forward))
             {
                 onTargetOn();
             }
 
                 //TerretInner.transform.Rotate(0, 1, 0);
         }
-        else //¹üÀ§ ¹ÛÀ¸·Î ³ª°¬À»¶§ ½ÇÇàÇÑ´Ù.
+        else //ë²”ìœ„ ë°–ìœ¼ë¡œ ë‚˜ê°”ì„ë•Œ ì‹¤í–‰í•œë‹¤.
         {
             onIdle();
         }
@@ -62,17 +64,17 @@ public class Terret : MonoBehaviour
 
     bool isTargetInSight(Vector3 terret, Vector3 target, Vector3 forward)
     {
-        //ÅÍ·¿À» ±âÁØÀ¸·ÎÀÇ °Å¸®¸¦ ±¸ÇÒ¼ö ÀÖ´Ù.
+        //í„°ë ›ì„ ê¸°ì¤€ìœ¼ë¡œì˜ ê±°ë¦¬ë¥¼ êµ¬í• ìˆ˜ ìˆë‹¤.
         Vector3 targetDirection = (target - terret).normalized;
-        //ÅÍ·¿ÀÇ ¹æÇâ°ú °Å¸®°ªÀ» ³»ÀûÇØ¼­ °ªÀ» ±¸ÇÑ´Ù.
+        //í„°ë ›ì˜ ë°©í–¥ê³¼ ê±°ë¦¬ê°’ì„ ë‚´ì í•´ì„œ ê°’ì„ êµ¬í•œë‹¤.
         float dotProduct = Vector3.Dot(forward.normalized, targetDirection);
         Vector3 CrossProduct = Vector3.Cross(forward.normalized, targetDirection);
-        // ³»ÀûÀÇ °ªÀÌ > 0 ÀÌ¸é ÇÃ·¹ÀÌ¾î ¾Õ¿¡ÀÖ°í, < 0ÀÌ¸é µÚ¿¡ÀÖ´Ù.
+        // ë‚´ì ì˜ ê°’ì´ > 0 ì´ë©´ í”Œë ˆì´ì–´ ì•ì—ìˆê³ , < 0ì´ë©´ ë’¤ì—ìˆë‹¤.
         Debug.Log("dotProduct: " + dotProduct);
         float theta = Mathf.Acos(dotProduct) * Mathf.Rad2Deg;
 
-        // Target°ú Player»çÀÌÀÇ °¢µµ
-        if(dotProduct > 0 && theta > 30 && CrossProduct.y < 0f) //¹üÀ§ ¾È¿¡ ÀÖ°í °¢µµ ¹üÀ§ ¾È¿¡ ÀÖÀ»¶§
+        // Targetê³¼ Playerì‚¬ì´ì˜ ê°ë„
+        if(dotProduct > 0 && theta > 30 && CrossProduct.y < 0f) //ë²”ìœ„ ì•ˆì— ìˆê³  ê°ë„ ë²”ìœ„ ì•ˆì— ìˆì„ë•Œ
         {
             return true;
         }
@@ -83,9 +85,9 @@ public class Terret : MonoBehaviour
 
     void onTargetOn()
     {
-        //playerÀÇ Á¤º¸¸¦ °¡Á®¿À°Ô µÊ
+        //playerì˜ ì •ë³´ë¥¼ ê°€ì ¸ì˜¤ê²Œ ë¨
         transform.LookAt(_autoTarget.Target.transform); 
-        //update¿¡¼­ ½Ç½Ã°£À¸·Î ÇÃ·¹ÀÌ¾îÀÇ À§Ä¡¸¦ °¡Á®¿È
+        //updateì—ì„œ ì‹¤ì‹œê°„ìœ¼ë¡œ í”Œë ˆì´ì–´ì˜ ìœ„ì¹˜ë¥¼ ê°€ì ¸ì˜´
 
         _elapsedTime += Time.deltaTime;
         if (_elapsedTime >= AttackCooltime)
