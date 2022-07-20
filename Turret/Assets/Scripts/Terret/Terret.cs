@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Terret : MonoBehaviour
 {
+    public bool IsTargetOn { get; private set; }
     private float _elapsedTime = 0.0f;
     public int sightAngle = 60;
 
@@ -24,6 +26,24 @@ public class Terret : MonoBehaviour
         //forwardTest = _autoTarget.transform.forward;
         //AutoTarget 클래스 안의 target이라는 게임 오브젝트를 불러옴 => 플레이어의 위치 정보 있음
     }
+
+    private Vector3 _arcStartVector;
+    private void Start()
+    {
+        float angle = 150f - transform.eulerAngles.y;
+        float x = Mathf.Cos(angle * Mathf.Deg2Rad);
+        float z = Mathf.Sin(angle * Mathf.Deg2Rad);
+        _arcStartVector = new Vector3(x, 0f, z);
+    }
+    private Color _red = new Color(1f, 0f, 0f, 0.1f);
+    private Color _blue = new Color(0f, 0f, 1f, 0.1f);
+    void OnDrawGizmos()
+    {
+        Handles.color = IsTargetOn ? _red : _blue;
+        Handles.DrawSolidArc(transform.position, transform.up, _arcStartVector, -30f, 10f);
+        Handles.DrawSolidArc(transform.position, transform.up, _arcStartVector, 30f, 10f);
+    }
+
 
 
     //private bool isTurnTerret = true;
@@ -52,12 +72,18 @@ public class Terret : MonoBehaviour
             if (isTargetInSight(transform.position, Player.position, OuterTerret.transform.forward))
             {
                 onTargetOn();
+                IsTargetOn = true;
             }
+            else
+            {
 
-                //TerretInner.transform.Rotate(0, 1, 0);
+                IsTargetOn = false;
+            }
+            //TerretInner.transform.Rotate(0, 1, 0);
         }
         else //범위 밖으로 나갔을때 실행한다.
         {
+            IsTargetOn = false;
             onIdle();
         }
     }

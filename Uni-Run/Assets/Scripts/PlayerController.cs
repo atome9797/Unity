@@ -57,10 +57,11 @@ public class PlayerController : MonoBehaviour {
             }
 
             jumpCount++;
-
+            //초기화
             playerRigidbody.velocity = _zero;
-
+            //update될때 마다 점프 힘을 가해줌
             playerRigidbody.AddForce(new Vector2(0f, jumpForce));
+            //오디오 재생 => 끊기지 않고 재생됨
             playerAudio.Play();
 
         }
@@ -86,7 +87,7 @@ public class PlayerController : MonoBehaviour {
 
         animator.SetTrigger(AnimationID.DIE);
         playerRigidbody.velocity = _zero;
-        //단 한번만 실행할때 사용한다.
+        //단 한번만 실행할때 사용한다. => 그렇기때문에 기존것은 점프로 할당되어 있음
         playerAudio.PlayOneShot(deathClip); //단발로 실행
 
         GameManager.Instance.End();
@@ -111,8 +112,6 @@ public class PlayerController : MonoBehaviour {
         {
             isOnGround = true;
             jumpCount = 0;
-
-            GameManager.Instance.AddScore();
 
         }
    }

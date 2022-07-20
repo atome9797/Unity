@@ -118,6 +118,10 @@
 -define:ENABLE_LEGACY_INPUT_MANAGER
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
+-r:"C:/Metaverse_01/Unity/Uni-Run/Library/PackageCache/com.unity.analytics@3.6.12/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll"
+-r:"C:/Metaverse_01/Unity/Uni-Run/Library/PackageCache/com.unity.analytics@3.6.12/Unity.Analytics.Editor.dll"
+-r:"C:/Metaverse_01/Unity/Uni-Run/Library/PackageCache/com.unity.analytics@3.6.12/Unity.Analytics.Tracker.dll"
+-r:"C:/Metaverse_01/Unity/Uni-Run/Library/PackageCache/com.unity.nuget.newtonsoft-json@3.0.2/Runtime/Newtonsoft.Json.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.CoreModule.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.DeviceSimulatorModule.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.DiagnosticsModule.dll"
@@ -324,10 +328,6 @@
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.5f1/Editor/Data/NetStandard/ref/2.1.0/netstandard.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.5f1/Editor/Data/PlaybackEngines/AndroidPlayer/Unity.Android.Gradle.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.5f1/Editor/Data/PlaybackEngines/AndroidPlayer/Unity.Android.Types.dll"
--r:"C:/Users/KGA_22/Downloads/Unity-Programming-Essence-2021-main/Unity-Programming-Essence-2021-main/11/Uni-Run/Library/PackageCache/com.unity.analytics@3.6.12/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll"
--r:"C:/Users/KGA_22/Downloads/Unity-Programming-Essence-2021-main/Unity-Programming-Essence-2021-main/11/Uni-Run/Library/PackageCache/com.unity.analytics@3.6.12/Unity.Analytics.Editor.dll"
--r:"C:/Users/KGA_22/Downloads/Unity-Programming-Essence-2021-main/Unity-Programming-Essence-2021-main/11/Uni-Run/Library/PackageCache/com.unity.analytics@3.6.12/Unity.Analytics.Tracker.dll"
--r:"C:/Users/KGA_22/Downloads/Unity-Programming-Essence-2021-main/Unity-Programming-Essence-2021-main/11/Uni-Run/Library/PackageCache/com.unity.nuget.newtonsoft-json@3.0.2/Runtime/Newtonsoft.Json.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Analytics.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.2D.Sprite.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.2D.Tilemap.Editor.ref.dll"
@@ -354,6 +354,7 @@
 "Assets/Scripts/PlatformSpawner.cs"
 "Assets/Scripts/PlayerController.cs"
 "Assets/Scripts/ScrollingObject.cs"
+"Assets/Scripts/UI/GameOverUI.cs"
 "Assets/Scripts/UI/ScoreText.cs"
 "Assets/Scripts/Util/SingletonBehavior.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"
