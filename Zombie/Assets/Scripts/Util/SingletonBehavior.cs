@@ -35,10 +35,11 @@ public class SingletonBehavior<T> : MonoBehaviour where T : MonoBehaviour //wher
         {
             if(_instance != this)
             {
-                Destroy(gameObject);
+                Destroy(gameObject); //기존에 다른 오브젝트가 있으면 삭제함
             }
-            return;
+            return;//인스턴스가 있으면 리턴해줌으로써 끝낸다. => 삭제후 리턴해주면 오류뜸
         }
+        //인스턴스가 없으면 새로 할당 받는다.
         _instance = GetComponent<T>();
         //씬이 전환될때에도 파괴가 되지 않도록 한다.
         DontDestroyOnLoad(gameObject);
