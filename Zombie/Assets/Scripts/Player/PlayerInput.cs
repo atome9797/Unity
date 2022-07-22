@@ -14,6 +14,9 @@ public class PlayerInput : MonoBehaviour
     public float RotateDirection { get; private set; }
     public bool CanFire { get; private set; } 
     public bool CanReload { get; private set; } 
+    public bool CanMove { get; private set; } 
+    public Vector3 MousePosition { get; private set; }
+
 
     // 매프레임 사용자 입력을 감지
     private void Update() {
@@ -24,6 +27,7 @@ public class PlayerInput : MonoBehaviour
             RotateDirection = 0;
             CanFire = false;
             CanReload = false;
+            CanMove = false;
             return;
         }
 
@@ -35,5 +39,10 @@ public class PlayerInput : MonoBehaviour
         CanFire = Input.GetButton(FireButtonName);
         // reload에 관한 입력 감지
         CanReload = Input.GetButtonDown(ReloadButtonName);
+        CanMove = Input.GetMouseButton(1);
+
+        //마우스 위치가 카메라의 어느 위치에 존재하는지 확인할수있다.
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Debug.DrawRay(ray.origin, ray.direction * 100f, Color.red);
     }
 }
