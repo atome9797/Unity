@@ -28,6 +28,7 @@ public class PlayerInput : MonoBehaviour
             CanFire = false;
             CanReload = false;
             CanMove = false;
+            MousePosition = Vector3.zero;
             return;
         }
 
@@ -40,6 +41,7 @@ public class PlayerInput : MonoBehaviour
         // reload에 관한 입력 감지
         CanReload = Input.GetButtonDown(ReloadButtonName);
         CanMove = Input.GetMouseButton(1);
+        MousePosition = Input.mousePosition;
 
         //마우스 위치가 카메라의 어느 위치에 존재하는지 확인할수있다.
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);

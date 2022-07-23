@@ -14,8 +14,6 @@ public class PlayerMovement : MonoBehaviour {
     private Animator _animator; // 플레이어 캐릭터의 애니메이터
     private NavMeshAgent _navMeshAgent;
 
-    private Vector3 _targetPosition;
-
     private void Awake()
     {
         _input = GetComponent<PlayerInput>();
@@ -42,19 +40,15 @@ public class PlayerMovement : MonoBehaviour {
         }
         else 
         {
-            
+            _animator.SetFloat(PlayerAnimID.Move, 1f);
         }
     }
 
-    private void Update()
-    {
-        
-    }
 
     // 입력값에 따라 캐릭터를 앞뒤로 움직임
     private void move()
     {
-
+        Debug.Log("여기야");
         if (_input.CanMove)
         {
             Ray mouseRay = Camera.main.ScreenPointToRay(_input.MousePosition);
@@ -63,6 +57,7 @@ public class PlayerMovement : MonoBehaviour {
             bool isHit = Physics.Raycast(mouseRay, out hit, 100f);
             if(isHit)
             {
+                Debug.Log("여기야");
                 NavMeshHit meshHit;
                 if(false == NavMesh.SamplePosition(hit.point, out meshHit, 2f, NavMesh.AllAreas))
                 {
@@ -77,7 +72,7 @@ public class PlayerMovement : MonoBehaviour {
         }
         else
         {
-            _navMeshAgent.isStopped = true;
+            stopAutoPathfinding();
             //속력(MoveSpeed) * 시간(deltaTime)  => 캐릭터 기준으로 앞 혹은 뒤를 이동 
             //거리 = 속력 * 시간
             float movementAmount = MoveSpeed * Time.fixedDeltaTime;
@@ -95,9 +90,20 @@ public class PlayerMovement : MonoBehaviour {
     {
         float rotateDirection = _input.RotateDirection;
 
+        if(rotateDirection != 0f)
+        {
+            stopAutoPathfinding();
+            float rotationAmount = rotateDirection * RotateSpeed * Time.fixedDeltaTime;
+            Quaternion deltaRotation = Quaternion.Euler(0f, rotationAmount, 0f);
+            _rigidbody.MoveRotation(_rigidbody.rotation * deltaRotation);
+        }
 
-        float rotationAmount = _input.RotateDirection * RotateSpeed * Time.fixedDeltaTime;
-        Quaternion deltaRotation = Quaternion.Euler(0f, rotationAmount, 0f);
-        _rigidbody.MoveRotation(_rigidbody.rotation * deltaRotation);
+
+    }
+
+    private void stopAutoPathfinding()
+    {
+        _navMeshAgent.isStopped = true;
+        _navMeshAgent.velocity  = Vector3.zero;
     }
 }
