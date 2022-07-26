@@ -29,7 +29,6 @@
 -define:PLATFORM_ARCH_64
 -define:UNITY_64
 -define:UNITY_INCLUDE_TESTS
--define:UNITY_ANALYTICS
 -define:USE_SEARCH_ENGINE_API
 -define:USE_SEARCH_TABLE
 -define:USE_SEARCH_MODULE
@@ -121,15 +120,15 @@
 -define:PACKAGE_ANIMATION
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
--r:"C:/Metaverse_01/Unity/Uni-Run/Library/PackageCache/com.unity.analytics@3.6.12/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll"
--r:"C:/Metaverse_01/Unity/Uni-Run/Library/PackageCache/com.unity.analytics@3.6.12/Unity.Analytics.Editor.dll"
--r:"C:/Metaverse_01/Unity/Uni-Run/Library/PackageCache/com.unity.analytics@3.6.12/Unity.Analytics.Tracker.dll"
--r:"C:/Metaverse_01/Unity/Uni-Run/Library/PackageCache/com.unity.collab-proxy@1.15.18/Lib/Editor/PlasticSCM/log4netPlastic.dll"
--r:"C:/Metaverse_01/Unity/Uni-Run/Library/PackageCache/com.unity.collab-proxy@1.15.18/Lib/Editor/PlasticSCM/Unity.Plastic.Antlr3.Runtime.dll"
--r:"C:/Metaverse_01/Unity/Uni-Run/Library/PackageCache/com.unity.collab-proxy@1.15.18/Lib/Editor/PlasticSCM/Unity.Plastic.Newtonsoft.Json.dll"
--r:"C:/Metaverse_01/Unity/Uni-Run/Library/PackageCache/com.unity.collab-proxy@1.15.18/Lib/Editor/PlasticSCM/unityplastic.dll"
--r:"C:/Metaverse_01/Unity/Uni-Run/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll"
--r:"C:/Metaverse_01/Unity/Uni-Run/Library/PackageCache/com.unity.nuget.newtonsoft-json@3.0.2/Runtime/Newtonsoft.Json.dll"
+-r:"C:/Metaverse_KYH/Unity/Uni-Run/Library/PackageCache/com.unity.analytics@3.6.12/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll"
+-r:"C:/Metaverse_KYH/Unity/Uni-Run/Library/PackageCache/com.unity.analytics@3.6.12/Unity.Analytics.Editor.dll"
+-r:"C:/Metaverse_KYH/Unity/Uni-Run/Library/PackageCache/com.unity.analytics@3.6.12/Unity.Analytics.Tracker.dll"
+-r:"C:/Metaverse_KYH/Unity/Uni-Run/Library/PackageCache/com.unity.collab-proxy@1.15.18/Lib/Editor/PlasticSCM/log4netPlastic.dll"
+-r:"C:/Metaverse_KYH/Unity/Uni-Run/Library/PackageCache/com.unity.collab-proxy@1.15.18/Lib/Editor/PlasticSCM/Unity.Plastic.Antlr3.Runtime.dll"
+-r:"C:/Metaverse_KYH/Unity/Uni-Run/Library/PackageCache/com.unity.collab-proxy@1.15.18/Lib/Editor/PlasticSCM/Unity.Plastic.Newtonsoft.Json.dll"
+-r:"C:/Metaverse_KYH/Unity/Uni-Run/Library/PackageCache/com.unity.collab-proxy@1.15.18/Lib/Editor/PlasticSCM/unityplastic.dll"
+-r:"C:/Metaverse_KYH/Unity/Uni-Run/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll"
+-r:"C:/Metaverse_KYH/Unity/Uni-Run/Library/PackageCache/com.unity.nuget.newtonsoft-json@3.0.2/Runtime/Newtonsoft.Json.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.5f1/Editor/Data/Managed/UnityEditor.Graphs.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.CoreModule.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.DeviceSimulatorModule.dll"
