@@ -9,7 +9,8 @@ public enum EnemyState
     Walk,       // 순찰 patrol
     Run,        // 추적 trace
     Attack,     // 공격
-    KnockBack   // 피격 damaged
+    KnockBack,   // 피격 damaged
+    Hide        // 은신
 }
 
 public class EnemyAI : MonoBehaviour
@@ -30,12 +31,35 @@ public class EnemyAI : MonoBehaviour
     Camera eye;
     Plane[] eyePlanes;
 
+    //공격 충돌 관련
+    GameObject weaponCollider;
+
+    //은신
+    DissolveController dissovceController;
+
+
     // Start is called before the first frame update
     void Start()
     {
+        dissovceController = GetComponentInChildren<DissolveController>();
+        dissovceController.ChangeState(DissolveController.State.Hide_Off);
         animator = GetComponent<Animator>();
         eye = transform.GetComponentInChildren<Camera>();
 
+        //sphereColliders를 같는 게임 오브젝트를 불러온다.
+        SphereCollider[] sphereColliders = GetComponentsInChildren<SphereCollider>();
+        foreach(var sphereCollider in sphereColliders)
+        {
+            //sphereCollider.name는 sphereCollider.gameObject.name의 축약형
+            //오브젝트의 이름을 받게됨
+            if (sphereCollider.name == "WeaponCollider")
+            {
+                weaponCollider = sphereCollider.gameObject;
+                break;
+            }
+        }
+
+        weaponCollider.SetActive(false);
         ChangeState(EnemyState.Idle);
     }
 
@@ -49,6 +73,7 @@ public class EnemyAI : MonoBehaviour
             case EnemyState.Run: UpdateRun(); break;
             case EnemyState.Attack: UpdateAttack(); break;
             case EnemyState.KnockBack: UpdateKnockBack(); break;
+            case EnemyState.Hide: UpdateHide(); break;
         }
     }
 
@@ -103,6 +128,11 @@ public class EnemyAI : MonoBehaviour
     {
 
     }
+    
+    void UpdateHide()
+    {
+
+    }
     #endregion
 
 
@@ -117,7 +147,7 @@ public class EnemyAI : MonoBehaviour
         {
             yield return new WaitForSeconds(2f);
             // 시간마다 수행해야 하는 동작 (상태가 바뀔 때 마다)
-            ChangeState(EnemyState.Walk);
+            ChangeState(EnemyState.Hide);
             yield break;
         }
     }
@@ -126,6 +156,7 @@ public class EnemyAI : MonoBehaviour
         // 한번만 수행해야 하는 동작 (상태가 바뀔 때 마다)
         Debug.Log("순찰 상태 시작");
         animator.SetBool("IsWalk", true);
+        dissovceController.ChangeState(DissolveController.State.Hide_Off);
 
         // 목적지 설정
         targetPos = transform.position + new Vector3(Random.Range(-7f, 7f), 0f, Random.Range(-7f, 7f));
@@ -143,6 +174,8 @@ public class EnemyAI : MonoBehaviour
         Debug.Log("추적 상태 시작");
         animator.SetBool("IsRun", true);
         targetPos = target.transform.position;
+
+        dissovceController.ChangeState(DissolveController.State.Hide_Off);
 
         while (true)
         {
@@ -170,6 +203,17 @@ public class EnemyAI : MonoBehaviour
             // 시간마다 수행해야 하는 동작 (상태가 바뀔 때 마다)
 
         }
+    } 
+    
+    IEnumerator CoroutineHide()
+    {
+        // 한번만 수행해야 하는 동작 (상태가 바뀔 때 마다)
+        dissovceController.ChangeState(DissolveController.State.Hide_On);
+
+        yield return new WaitForSeconds(3f);
+        // 시간마다 수행해야 하는 동작 (상태가 바뀔 때 마다)
+        ChangeState(EnemyState.Walk);
+        yield break;
     }
     #endregion
 
@@ -194,6 +238,7 @@ public class EnemyAI : MonoBehaviour
             case EnemyState.Run: StartCoroutine(CoroutineRun()); break;
             case EnemyState.Attack: StartCoroutine(CoroutineAttack()); break;
             case EnemyState.KnockBack: StartCoroutine(CoroutineKnockBack()); break;
+            case EnemyState.Hide: StartCoroutine(CoroutineHide()); break;
         }
     }
 
@@ -206,5 +251,19 @@ public class EnemyAI : MonoBehaviour
         isFindEnemy = GeometryUtility.TestPlanesAABB(eyePlanes, targetBounds);
 
         return isFindEnemy;
+    }
+
+    void OnAttack(AnimationEvent animationEvent)
+    {
+        Debug.Log("OnAttack : " + animationEvent.intParameter);
+        
+        if(animationEvent.intParameter == 1)
+        {
+            weaponCollider.SetActive(true);
+        }
+        else
+        {
+            weaponCollider.SetActive(false);
+        }
     }
 }
