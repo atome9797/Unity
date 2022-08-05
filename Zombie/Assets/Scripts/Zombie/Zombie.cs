@@ -83,6 +83,7 @@ public class Zombie : LivingEntity
 
                 _targetCandidateCount = Physics.OverlapSphereNonAlloc(transform.position, 7f, _targetCandidates, TargetLayer);
 
+                //접촉한 레이어는 플레이어 1개 밖에 없으므로  for문은 1번 돈다. 
                 for(int i = 0; i < _targetCandidateCount; ++i)
                 {
                     Collider targetCandidate = _targetCandidates[i];
@@ -146,6 +147,7 @@ public class Zombie : LivingEntity
             // 트리거 충돌한 상대방 게임 오브젝트가 추적 대상이라면 공격 실행
             LivingEntity livingEntity = other.GetComponent<LivingEntity>();
 
+            //추적대상이 플레이어 인지 확인하고 플레이어면 공격한다.
             if (livingEntity == _target)
             {
                 Vector3 hitPosition = other.ClosestPoint(transform.position); //가장 가까운 충돌기의 점입니다.

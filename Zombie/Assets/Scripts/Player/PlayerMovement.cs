@@ -59,7 +59,8 @@ public class PlayerMovement : MonoBehaviour {
             {
                 Debug.Log("여기야");
                 NavMeshHit meshHit;
-                if(false == NavMesh.SamplePosition(hit.point, out meshHit, 2f, NavMesh.AllAreas))
+                //지정된 범위 내에서 NavMesh를 기반으로 가장 가까운 점을 찾습니다.
+                if (false == NavMesh.SamplePosition(hit.point, out meshHit, 2f, NavMesh.AllAreas))
                 {
                     return;
                 }
