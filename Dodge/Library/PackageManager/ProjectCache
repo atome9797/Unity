@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637928471230154325
-    m_Hash: 1879507409
+      ticks: 637944090178593301
+    m_Hash: 1179235663
   m_LockFileStatus:
     m_FilePath: C:/Metaverse_KYH/Unity/Dodge/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637928471480917407
-    m_Hash: 1152500608
+      ticks: 637944090178593301
+    m_Hash: 4124369080
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
