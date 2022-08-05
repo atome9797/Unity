@@ -37,6 +37,14 @@ public class EnemyAI : MonoBehaviour
     //은신
     DissolveController dissovceController;
 
+    private void Awake()
+    {
+        //클래스 인스턴스 생성 => 이때 싱글톤 객체 생성됨
+        MonsterData data = DataManager.Instance.GetMonsterData(2);
+        moveSpeed = data.moveSpeed;
+        rotationSpeed = data.rotationSpeed;
+    }
+
 
     // Start is called before the first frame update
     void Start()

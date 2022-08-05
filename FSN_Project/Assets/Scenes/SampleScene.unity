@@ -751,8 +751,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a47f0ed774fbf5e4ebbdcd4cc523d2e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  state: 0
-  prevState: 0
+  state: 2
+  prevState: 6
   target: {fileID: 1685995089}
 --- !u!1001 &1477882464
 PrefabInstance:
