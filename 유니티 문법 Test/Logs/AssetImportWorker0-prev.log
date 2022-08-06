@@ -11,13 +11,13 @@ C:\Program Files\Unity\Hub\Editor\2021.3.5f1\Editor\Unity.exe
 -name
 AssetImportWorker0
 -projectPath
-C:/Metaverse_01/Unity/Test
+C:/Metaverse_01/Unity/유니티 문법 Test
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-7975
-Successfully changed project path to: C:/Metaverse_01/Unity/Test
-C:/Metaverse_01/Unity/Test
+1362
+Successfully changed project path to: C:/Metaverse_01/Unity/유니티 문법 Test
+C:/Metaverse_01/Unity/유니티 문법 Test
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-bucket-allocator-granularity=16"
     "memorysetup-bucket-allocator-bucket-count=8"
@@ -47,11 +47,11 @@ C:/Metaverse_01/Unity/Test
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 61.67 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 68.17 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.5f1 (40eb3a945986)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.5f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Metaverse_01/Unity/Test/Assets
+[Subsystems] Discovering subsystems at path C:/Metaverse_01/Unity/유니티 문법 Test/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
@@ -63,92 +63,92 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.5f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.5f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.5f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56768
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56036
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.5f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.5f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.009360 seconds.
+Registered in 0.012580 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 64.74 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 58.77 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.527 seconds
+- Completed reload, in  0.539 seconds
 Domain Reload Profiling:
-	ReloadAssembly (528ms)
-		BeginReloadAssembly (73ms)
+	ReloadAssembly (539ms)
+		BeginReloadAssembly (76ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (358ms)
-			LoadAssemblies (71ms)
+		EndReloadAssembly (365ms)
+			LoadAssemblies (74ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (78ms)
+			SetupTypeCache (82ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (18ms)
-			SetupLoadedEditorAssemblies (220ms)
+			RebuildScriptCaches (23ms)
+			SetupLoadedEditorAssemblies (216ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (44ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (65ms)
+				RefreshPlugins (59ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (72ms)
-				ProcessInitializeOnLoadMethodAttributes (38ms)
+				ProcessInitializeOnLoadAttributes (75ms)
+				ProcessInitializeOnLoadMethodAttributes (37ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.009255 seconds.
+Registered in 0.008631 seconds.
 Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\Metaverse_01\Unity\Test\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\Metaverse_01\Unity\Test\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image C:\Metaverse_01\Unity\유니티 문법 Test\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Metaverse_01\Unity\유니티 문법 Test\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
 Refreshing native plugins compatible for Editor in 0.57 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.928 seconds
+- Completed reload, in  0.954 seconds
 Domain Reload Profiling:
-	ReloadAssembly (928ms)
-		BeginReloadAssembly (212ms)
+	ReloadAssembly (954ms)
+		BeginReloadAssembly (218ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
+			DisableScriptedObjects (4ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (124ms)
-		EndReloadAssembly (627ms)
-			LoadAssemblies (88ms)
+			CreateAndSetChildDomain (121ms)
+		EndReloadAssembly (642ms)
+			LoadAssemblies (89ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (197ms)
+			SetupTypeCache (187ms)
 			ReleaseScriptCaches (0ms)
 			RebuildScriptCaches (35ms)
-			SetupLoadedEditorAssemblies (291ms)
+			SetupLoadedEditorAssemblies (307ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (13ms)
+				InitializePlatformSupportModulesInManaged (14ms)
 				SetLoadedEditorAssemblies (0ms)
 				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (74ms)
-				ProcessInitializeOnLoadAttributes (173ms)
-				ProcessInitializeOnLoadMethodAttributes (21ms)
-				AfterProcessingInitializeOnLoad (9ms)
+				BeforeProcessingInitializeOnLoad (87ms)
+				ProcessInitializeOnLoadAttributes (172ms)
+				ProcessInitializeOnLoadMethodAttributes (22ms)
+				AfterProcessingInitializeOnLoad (12ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (10ms)
+			AwakeInstancesAfterBackupRestoration (12ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 0.62 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.65 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3370 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 27 unused Assets / (111.0 KB). Loaded Objects now: 3828.
 Memory consumption went from 115.9 MB to 115.8 MB.
-Total: 3.075500 ms (FindLiveObjects: 0.236300 ms CreateObjectMapping: 0.098100 ms MarkObjects: 2.657600 ms  DeleteObjects: 0.081900 ms)
+Total: 3.939000 ms (FindLiveObjects: 0.450100 ms CreateObjectMapping: 0.402100 ms MarkObjects: 2.974000 ms  DeleteObjects: 0.112200 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -162,73 +162,145 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 407.368607 seconds.
-  path: Assets/Scenes
-  artifactKey: Guid(6ea315d0fd7389c41b19996891e99ae3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes using Guid(6ea315d0fd7389c41b19996891e99ae3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bc172811d573b296104adb4d2728db37') in 0.006279 seconds 
+  Time since last request: 3049.673240 seconds.
+  path: Assets/Scenes/싱글톤 패턴과 옵저버패턴 활용.unity
+  artifactKey: Guid(8ef7052f2afe17d45bef70bb3be743d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/싱글톤 패턴과 옵저버패턴 활용.unity using Guid(8ef7052f2afe17d45bef70bb3be743d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e57545875d5d3af8d39eb05506e23745') in 0.007936 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Scenes/TestScene.unity
-  artifactKey: Guid(3ffb10a92a9a2e04fb0e501a309d36c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/TestScene.unity using Guid(3ffb10a92a9a2e04fb0e501a309d36c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca7267ff45f7358972d9d766fc82a1b4') in 0.001536 seconds 
+  Time since last request: 67.370867 seconds.
+  path: Assets/Scenes/내적외적 활용.unity
+  artifactKey: Guid(86a207063ab95164fa3526ef5c22d6b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/내적외적 활용.unity using Guid(86a207063ab95164fa3526ef5c22d6b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f05b63104e399f72c2415442d511bf34') in 0.002020 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Scenes/SampleScene.unity
-  artifactKey: Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/SampleScene.unity using Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a99fbc2c4bf5d5da7c55a99f52bed50f') in 0.001456 seconds 
+  Time since last request: 27.800848 seconds.
+  path: Assets/Scenes/벡터 수학 활용.unity
+  artifactKey: Guid(9882215a141b63448b7a4e08dc0c9adf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/벡터 수학 활용.unity using Guid(9882215a141b63448b7a4e08dc0c9adf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '67208fc2787fed371018af9f5bcd1059') in 0.002215 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 31.478470 seconds.
-  path: Assets/Scenes/삼각함수 활용.unity
-  artifactKey: Guid(3ffb10a92a9a2e04fb0e501a309d36c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/삼각함수 활용.unity using Guid(3ffb10a92a9a2e04fb0e501a309d36c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fba6df4b704f22854b5ec477910f75d1') in 0.001658 seconds 
+  Time since last request: 20.361821 seconds.
+  path: Assets/Scenes/오디오 활용.unity
+  artifactKey: Guid(f9ef97a5a853504438a38cda7f6b04e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/오디오 활용.unity using Guid(f9ef97a5a853504438a38cda7f6b04e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5049cf718071a5b6450c3131b046f05e') in 0.001671 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 1845.225397 seconds.
-  path: Assets/Scenes/카메라.unity
-  artifactKey: Guid(83577f02aa2137247a5368f5933c21d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/카메라.unity using Guid(83577f02aa2137247a5368f5933c21d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f996ea70ed6982d9f26ab1fe01273643') in 0.001768 seconds 
+  Time since last request: 13.049011 seconds.
+  path: Assets/Scenes/애니메이션 기능 활용.unity
+  artifactKey: Guid(e5b5b95d391e1344c9178863c47123ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/애니메이션 기능 활용.unity using Guid(e5b5b95d391e1344c9178863c47123ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f013f0fea17df3c958785a06aa74537') in 0.001630 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 15.623829 seconds.
-  path: Assets/Scenes/rigidBody 활용.unity
-  artifactKey: Guid(83577f02aa2137247a5368f5933c21d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/rigidBody 활용.unity using Guid(83577f02aa2137247a5368f5933c21d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'db311ecf71a57164e7c415172e222b27') in 0.001970 seconds 
+  Time since last request: 107.593660 seconds.
+  path: Assets/Scenes/오브젝트 풀링활용.unity
+  artifactKey: Guid(943b636994442e840b31b977c583151d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/오브젝트 풀링활용.unity using Guid(943b636994442e840b31b977c583151d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7de2d54dfc1e4b16974828406046aaa0') in 0.002075 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 14.121490 seconds.
-  path: Assets/Scenes/ㄲigidBody 활용.unity
-  artifactKey: Guid(83577f02aa2137247a5368f5933c21d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/ㄲigidBody 활용.unity using Guid(83577f02aa2137247a5368f5933c21d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '506f5bb653ac8480155ac5d4d27894db') in 0.001706 seconds 
+  Time since last request: 14.404569 seconds.
+  path: Assets/Scenes/라이트맵 활용.unity
+  artifactKey: Guid(6e88cec5f78e60c42b95931ec7ae7e53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/라이트맵 활용.unity using Guid(6e88cec5f78e60c42b95931ec7ae7e53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9576b0ad38fcd447385b9fbbb3b62d52') in 0.001802 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 14.330031 seconds.
-  path: Assets/Scenes/RigidBody 활용.unity
-  artifactKey: Guid(83577f02aa2137247a5368f5933c21d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/RigidBody 활용.unity using Guid(83577f02aa2137247a5368f5933c21d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47e16dc55dcadad2acec7d2e24c566d0') in 0.001729 seconds 
+  Time since last request: 63.156847 seconds.
+  path: Assets/Scenes/애니메이션 기능 활용(여러 레이어 동시동작).unity
+  artifactKey: Guid(e5b5b95d391e1344c9178863c47123ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/애니메이션 기능 활용(여러 레이어 동시동작).unity using Guid(e5b5b95d391e1344c9178863c47123ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aecd6c759cc926effcf628b2058aecc1') in 0.001690 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 13.294466 seconds.
-  path: Assets/Scenes/Transform 활용.unity
-  artifactKey: Guid(00e0842f4e6350b4b9dffb6eecc89d54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Transform 활용.unity using Guid(00e0842f4e6350b4b9dffb6eecc89d54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae04b8db1c36384afdf70aff958ef3eb') in 0.001813 seconds 
+  Time since last request: 14.370814 seconds.
+  path: Assets/Scenes/시네머신 활용.unity
+  artifactKey: Guid(7252ba22421897b48902e065cd05ad10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/시네머신 활용.unity using Guid(7252ba22421897b48902e065cd05ad10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '04c34f40f483f82630c96fdb53430cce') in 0.001629 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 13.800041 seconds.
-  path: Assets/Scenes/헬리콥터 구현.unity
-  artifactKey: Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/헬리콥터 구현.unity using Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c484f5cfe0721ec27be800b8ed219a1') in 0.001754 seconds 
+  Time since last request: 23.180243 seconds.
+  path: Assets/Scenes/시네머신 활용(카메라 1인칭, 3인칭시점전환).unity
+  artifactKey: Guid(7252ba22421897b48902e065cd05ad10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/시네머신 활용(카메라 1인칭, 3인칭시점전환).unity using Guid(7252ba22421897b48902e065cd05ad10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd43a801ca30ef36e2a7c5978d4a09185') in 0.001683 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 86.629200 seconds.
-  path: Assets/Scenes/선형보간함수 활용.unity
-  artifactKey: Guid(f03f2fc0884261544b533228bd3b7e4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/선형보간함수 활용.unity using Guid(f03f2fc0884261544b533228bd3b7e4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53a2323b1ca91270aa490fa70c9cf180') in 0.002365 seconds 
+  Time since last request: 17.932764 seconds.
+  path: Assets/Scenes/인터페이스 활용.unity
+  artifactKey: Guid(d41bdc26fd27c574f9e0ead73c940c3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/인터페이스 활용.unity using Guid(d41bdc26fd27c574f9e0ead73c940c3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ece0ebe1f5009731a0883e4550dd7377') in 0.001654 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 107.551003 seconds.
-  path: Assets/Scenes/콜라이더 활용.unity
-  artifactKey: Guid(2ff73f8f5539af64ab2ffe5535f10fc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/콜라이더 활용.unity using Guid(2ff73f8f5539af64ab2ffe5535f10fc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '41ca2f9b88f30366fb7bb87a4e4e9af0') in 0.001777 seconds 
+  Time since last request: 17.406221 seconds.
+  path: Assets/Scenes/라인 렌더러 활용.unity
+  artifactKey: Guid(71fcaeb82c8b4bf49864937c40f84ef1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/라인 렌더러 활용.unity using Guid(71fcaeb82c8b4bf49864937c40f84ef1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c113c703e0d8cb9e82f4ef585e0ed003') in 0.001995 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 24.211886 seconds.
+  path: Assets/Scenes/파티클 활용.unity
+  artifactKey: Guid(3b8829edad6ed984294539aebf2bdbad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/파티클 활용.unity using Guid(3b8829edad6ed984294539aebf2bdbad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cffe6a42ccea9282ca77777ee7c9c3af') in 0.001834 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 20.071113 seconds.
+  path: Assets/Scenes/New Folder
+  artifactKey: Guid(778ecee5e4864c34db10b1e55b6f19ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/New Folder using Guid(778ecee5e4864c34db10b1e55b6f19ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f49ae0e4717c6c752abad2d1575eb2a9') in 0.002062 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 23.949212 seconds.
+  path: Assets/Scenes/스크립터블 오브젝트 활용.unity
+  artifactKey: Guid(681d5c8681a5e1a40884670620791544) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/스크립터블 오브젝트 활용.unity using Guid(681d5c8681a5e1a40884670620791544) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3bc167d73e019efcc91477a65ca4a202') in 0.001724 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 47.229685 seconds.
+  path: Assets/Scenes/New Scene.unity
+  artifactKey: Guid(7c58aaee011cc6c4c9c50c2dac8306b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/New Scene.unity using Guid(7c58aaee011cc6c4c9c50c2dac8306b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f02b521765007fd3f960fbca8ae22f7') in 0.001884 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1686.081226 seconds.
+  path: Assets/Scenes/열거형의 다양한 기능 활용.unity
+  artifactKey: Guid(7c58aaee011cc6c4c9c50c2dac8306b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/열거형의 다양한 기능 활용.unity using Guid(7c58aaee011cc6c4c9c50c2dac8306b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b7542e26496bb90923aa6d774841922') in 0.001665 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 762.082645 seconds.
+  path: Assets/Scenes/Coroutine 활용.unity
+  artifactKey: Guid(e7907db226834614ead1c40fb826a90c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Coroutine 활용.unity using Guid(e7907db226834614ead1c40fb826a90c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53c395fbafca69572a48421c27a95ea0') in 0.002096 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 794.661663 seconds.
+  path: Assets/Scenes/Coroutine 함수 활용.unity
+  artifactKey: Guid(e7907db226834614ead1c40fb826a90c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Coroutine 함수 활용.unity using Guid(e7907db226834614ead1c40fb826a90c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8256a7e23eec0793423381194b75ba87') in 0.001715 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2267.343008 seconds.
+  path: Assets/Scenes/RayCast로 충돌처리 활용.unity
+  artifactKey: Guid(e2c756d863d13bf49846365c4b433365) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/RayCast로 충돌처리 활용.unity using Guid(e2c756d863d13bf49846365c4b433365) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c6e1abf9fb5d6b7e4cee29df28940de2') in 0.002448 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 557.469471 seconds.
+  path: Assets/Scenes/RayCast로 충돌처리 활용(레이어 마스크 포함).unity
+  artifactKey: Guid(e2c756d863d13bf49846365c4b433365) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/RayCast로 충돌처리 활용(레이어 마스크 포함).unity using Guid(e2c756d863d13bf49846365c4b433365) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81614fd33a64b35addca634b052bcdb2') in 0.001816 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5300.276100 seconds.
+  path: Assets/Scenes/역 운동학(IK) 활용.unity
+  artifactKey: Guid(a3f4f4236c778b146b152ecb6749d018) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/역 운동학(IK) 활용.unity using Guid(a3f4f4236c778b146b152ecb6749d018) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b59625d381da456bb325be1ef5535216') in 0.003745 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1293.932671 seconds.
+  path: Assets/Scenes/확장 메소드 활용.unity
+  artifactKey: Guid(28860be0d5c1f1944b8ded1e78872074) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/확장 메소드 활용.unity using Guid(28860be0d5c1f1944b8ded1e78872074) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd0e4f376d24d49f8e3f176a0f346b92f') in 0.001799 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 676.310681 seconds.
+  path: Assets/Scenes/가상함수, 인터페이스, 추상클래스 차이 활용.unity
+  artifactKey: Guid(f4dc552eb974ab64db4bc6a866c47792) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/가상함수, 인터페이스, 추상클래스 차이 활용.unity using Guid(f4dc552eb974ab64db4bc6a866c47792) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dbb8e046dabf756872f35933f51dc448') in 0.001764 seconds 
