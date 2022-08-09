@@ -6,7 +6,7 @@ public class UIManager : MonoBehaviour
 {
     public GameObject[] characters;
 
-    private int SeletedID { get; set; }
+    private int SelectedID { get; set; }
 
     // Start is called before the first frame update
     void Start()
@@ -22,17 +22,16 @@ public class UIManager : MonoBehaviour
         }
 
         foreach(GameObject character in characters)
-
         {
             character.SetActive(false);
 
-            SeletedID = index;
-            characters[SeletedID].SetActive(true);
         }
+        SelectedID = index;
+        characters[SelectedID].SetActive(true);
     }
 
     public void SceneChage()
     {
-        
+        characters[SelectedID].GetComponent<AutoRotate>().IsSelected = true;
     }
 }

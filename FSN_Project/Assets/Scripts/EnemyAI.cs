@@ -39,7 +39,9 @@ public class EnemyAI : MonoBehaviour
 
     private void Awake()
     {
-        //클래스 인스턴스 생성 => 이때 싱글톤 객체 생성됨
+        //Json 데이터 파일 생성
+        DataManager.Instance.SaveGameData();
+        //클래스 인스턴스 생성 => 이때 싱글톤 객체 생성됨 => 이때 CSV 파일 읽어옴
         MonsterData data = DataManager.Instance.GetMonsterData(2);
         moveSpeed = data.moveSpeed;
         rotationSpeed = data.rotationSpeed;

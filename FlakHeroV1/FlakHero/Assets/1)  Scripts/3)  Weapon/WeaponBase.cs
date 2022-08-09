@@ -71,6 +71,7 @@ public abstract class WeaponBase : MonoBehaviour
         animator = GetComponent<PlayerAnimatorController>();
     }
 
+    //해당 초 만큼 대기 타면서 heatingValue 값이 줄어듬
     public void AircoolingWeapon()
     {
         heatingValue -= 50f * Time.deltaTime;

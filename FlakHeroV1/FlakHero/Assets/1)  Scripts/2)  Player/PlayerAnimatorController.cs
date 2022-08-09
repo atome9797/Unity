@@ -8,7 +8,7 @@ public class PlayerAnimatorController : MonoBehaviour
     void Start()
     {
         // "Player" 오브젝트 기준으로 자식 오브젝트인 "arms_assault_01" 오브젝트에 Animator 컴포넌트가 있다.
-        animator = GetComponentInChildren<Animator>();
+        animator = GetComponentInChildren<Animator>(); //애니메이터 컴포넌트는 오브젝트의 자식이다.
     }
 
     public float MoveSpeed

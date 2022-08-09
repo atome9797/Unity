@@ -1,8 +1,32 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
+//Serializable 사용시 serializing 가능한 데이터 타입이 된다.
+[Serializable]
+public class GameData
+{
+    public int BGM_Volume = 0;
+    public int Effect_Volume = 0;
+    
+    public int gold = 0;
+    public int hp = 10;
+    public float movespeed = 5f;
 
+    public List<MonsterData> monsterKillDatas;
+
+    public GameData(int gold, int hp, float movespeed)
+    {
+        this.gold = gold;
+        this.hp = hp;
+        this.movespeed = movespeed;
+        monsterKillDatas = new List<MonsterData>();
+    }
+}
+
+[Serializable]
 public class MonsterData
 {
     public int index;
@@ -50,6 +74,63 @@ public class DataManager : MonoBehaviour
         }
     }
 
+    GameData gameDatas;
+
+    //GameData를 반환하는 GameData클래스
+    public GameData GameData
+    {
+        get
+        {
+            if(gameDatas == null)
+            {
+                LoadGameData();
+                SaveGameData();
+            }
+
+            return gameDatas;
+        }
+    }
+
+    void InitGameData()
+    {
+        gameDatas = new GameData(100, 300, 5f);
+        gameDatas.monsterKillDatas.Add(new MonsterData(1, "전지윤", 2f, 1f, "오늘 안옴"));
+        gameDatas.monsterKillDatas.Add(new MonsterData(2, "권희영", 2f, 1f, "오늘 안옴"));
+    }
+
+    //Json 저장
+    public void SaveGameData()
+    {
+        InitGameData();
+        string toJsonData = JsonUtility.ToJson(gameDatas, true);
+        //사용자의 로컬 데이터를 저장해주는 공간을 지정해주는 함수
+        string filePath = Application.persistentDataPath + GameDataFileName;
+        File.WriteAllText(filePath, toJsonData);
+    }
+
+    //Json 읽기
+    public void LoadGameData()
+    {
+        string filePath = Application.persistentDataPath + GameDataFileName;
+
+        if(File.Exists(filePath))
+        {
+            string fromJsonData = File.ReadAllText(filePath);
+            gameDatas = JsonUtility.FromJson<GameData>(fromJsonData);
+
+            if(gameDatas == null)
+            {
+                InitGameData();
+            }
+        }
+        else
+        {
+            InitGameData();
+        }
+
+    }
+
+
     public string GameDataFileName = ".json";
 
 
@@ -58,6 +139,7 @@ public class DataManager : MonoBehaviour
     [SerializeField] TextAsset monsterDB;
     public Dictionary<int, MonsterData> MonsterDataDict { get; set; }
 
+    //CSV 파일 읽기
     private void SetMonsterDataFromCSV()
     {
         //파일 불러옴
