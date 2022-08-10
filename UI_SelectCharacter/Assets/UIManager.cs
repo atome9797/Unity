@@ -28,6 +28,7 @@ public class UIManager : MonoBehaviour
         }
         SelectedID = index;
         characters[SelectedID].SetActive(true);
+        SceneChage();
     }
 
     public void SceneChage()
