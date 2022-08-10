@@ -40,6 +40,7 @@ public class RotateToMouse : MonoBehaviour
             angle -= 360;
         }
 
+        //0~ 360도 맞춰주기 위해 
         return Mathf.Clamp(angle, min, max);
     }
 }
