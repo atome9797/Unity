@@ -357,6 +357,7 @@
 "Assets/Scripts/EnemyAI.cs"
 "Assets/Scripts/ITargetable.cs"
 "Assets/Scripts/PlayerController.cs"
+"Assets/Scripts/PlayerInput.cs"
 -langversion:9.0
 
 /deterministic

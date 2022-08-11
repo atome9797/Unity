@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+
 
 public enum EnemyState
 {
@@ -15,6 +17,10 @@ public enum EnemyState
 
 public class EnemyAI : MonoBehaviour
 {
+
+    public UnityEvent onEvent = new UnityEvent();
+
+
     public EnemyState state;
     public EnemyState prevState = EnemyState.None;
 
@@ -36,6 +42,31 @@ public class EnemyAI : MonoBehaviour
 
     //은신
     DissolveController dissovceController;
+
+    //부딪친 지점을 반환
+    Transform HitTransform;
+
+    public void Activate()
+    {
+        //transform 위치로 이동하게 함
+    }
+
+    private void OnEnable()
+    {
+        onEvent.AddListener(Activate);
+    }
+
+
+    //플레이어와 충돌했을때 옵저버 패턴 발동시켜 , 충동 시점으로 이동하도록 설정하기
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Player")
+        {
+            HitTransform = other.transform;
+            onEvent.Invoke(); //이벤트 발동시킴
+        }
+    }
+
 
     private void Awake()
     {
@@ -240,6 +271,9 @@ public class EnemyAI : MonoBehaviour
         animator.SetBool("IsRun", false);
         animator.SetBool("IsAttack", false);
         animator.SetBool("IsKnockBack", false);
+
+
+
 
         switch (state)
         {
