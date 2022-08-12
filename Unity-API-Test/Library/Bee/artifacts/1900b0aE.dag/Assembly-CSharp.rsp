@@ -351,6 +351,8 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
+"Assets/Script/EventSceneT10/PlayerInputT10.cs"
+"Assets/Script/EventSceneT10/PlayerMovementT10.cs"
 "Assets/Script/Helicopter.cs"
 "Assets/Script/MultiScene/GameManager.cs"
 "Assets/Script/MultiScene/SceneChange.cs"
