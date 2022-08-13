@@ -33,6 +33,7 @@ public class EnemyAI : MonoBehaviour
 
     // 적 탐지 관련
     public GameObject target;
+    private Transform _targetTest;
     bool isFindEnemy = false;
     Camera eye;
     Plane[] eyePlanes;
@@ -124,6 +125,37 @@ public class EnemyAI : MonoBehaviour
     {
 
     }
+
+    public void UpdateWalkTest(Transform targetTest)
+    {
+        if (_targetTest != null)
+        {
+            return;
+        }
+
+        _targetTest = targetTest;
+
+        if (IsFindEnemy())
+        {
+            ChangeState(EnemyState.Run);
+            return;
+        }
+
+        // 목적지까지 이동하는 코드
+        Vector3 dir = _targetTest.position - transform.position;
+        if (dir.sqrMagnitude <= 0.2f)
+        {
+            ChangeState(EnemyState.Idle);
+            return;
+        }
+
+        var targetRotation = Quaternion.LookRotation(_targetTest.position - transform.position, Vector3.up);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+
+        transform.position += transform.forward * moveSpeed * Time.deltaTime;
+    }
+
+
     void UpdateWalk()
     {
         if (IsFindEnemy())
