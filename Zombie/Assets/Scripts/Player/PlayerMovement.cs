@@ -96,6 +96,7 @@ public class PlayerMovement : MonoBehaviour {
             stopAutoPathfinding();
             float rotationAmount = rotateDirection * RotateSpeed * Time.fixedDeltaTime;
             Quaternion deltaRotation = Quaternion.Euler(0f, rotationAmount, 0f);
+            Debug.Log($"좌우 {_rigidbody.rotation * deltaRotation}");
             _rigidbody.MoveRotation(_rigidbody.rotation * deltaRotation);
         }
 
